@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fuuast_connect/Views/SplashScreen.dart';
+import 'package:fuuast_connect/Configuration/AppRoutes.dart';
+import 'package:provider/provider.dart';
+import 'package:fuuast_connect/Providers/SplashProvider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,16 +10,23 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => SplashProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
+        initialRoute: '/',
+        routes: AppRoutes.routes,
       ),
-      home: SplashScreen(),
     );
   }
 }
-
