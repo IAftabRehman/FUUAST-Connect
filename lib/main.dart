@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fuuast_connect/Configuration/AppRoutes.dart';
+import 'package:fuuast_connect/Providers/HomeProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:fuuast_connect/Providers/SplashProvider.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => SplashProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => HomeProvider(),
         ),
       ],
       child: MaterialApp(

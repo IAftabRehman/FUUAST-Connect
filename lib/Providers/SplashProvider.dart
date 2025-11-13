@@ -31,7 +31,7 @@ class SplashProvider with ChangeNotifier{
   }
 
   void moveToHome(BuildContext context) {
-    Timer(Duration(seconds: 1000), () {
+    Timer(Duration(seconds: 5), () {
       Navigator.pushReplacementNamed(context, '/home');
     });
   }

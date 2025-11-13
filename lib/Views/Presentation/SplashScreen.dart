@@ -32,19 +32,26 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Center(
             child: AnimatedContainer(
-              duration: const Duration(milliseconds: 900),
+              duration: const Duration(seconds: 1),
               height: provider.logoHeight,
               width: provider.logoWidth,
-              child: Image.asset('assets/images/Fuuast_Logo.png', fit: BoxFit.contain)),
+              child: Image.asset('assets/fuuastLogo.png', fit: BoxFit.contain),
             ),
-          const SizedBox(height: 20),
+          ),
+          const SizedBox(height: 30),
 
-          AnimatedAlign(
-            alignment: provider.showText ? Alignment.topCenter : Alignment.bottomCenter,
-            duration: Duration(seconds: 1),
-            child: MyText(text: "FUUAST", size: 35, fontWeight: FontWeight.bold, color: AppColors.primaryColor,)
-          )
-
+          AnimatedOpacity(
+            opacity: provider.showText ? 1.0 : 0.0,
+            duration: const Duration(seconds: 2),
+            curve: Curves.easeInBack,
+            child: MyText(
+              text: "The\nFUUASTIANS",
+              size: 30,
+              fontWeight: FontWeight.bold,
+              color: AppColors.primaryColor,
+              textAlign: TextAlign.center,
+            ),
+          ),
         ],
       ),
     );

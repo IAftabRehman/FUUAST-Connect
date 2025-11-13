@@ -1,6 +1,6 @@
-# 📱 FUUAST Connect
+# 📱 FUUASTAINS
 
-**FUUAST Connect** is a smart Flutter-based university management app designed for **FUUAST** students and faculty.  
+**Fuuastains** is a smart Flutter-based university management app designed for **FUUAST** students and faculty.  
 It provides real-time access to room availability, timetable updates, exam seating plans, teacher details, and much more — all through a simple and connected platform.
 
 ---
