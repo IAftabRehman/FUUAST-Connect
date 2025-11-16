@@ -29,8 +29,6 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
       ),
       body: Column(
         children: [
-          MyContainer(
-          )
         ],
       ),
     );
