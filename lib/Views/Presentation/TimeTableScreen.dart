@@ -28,7 +28,8 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
         leading: IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.arrow_back, color: AppColors.backgroundColor)),
       ),
       body: Column(
-        children: [ 
+        children: [
+          MyContainer()
         ],
       ),
     );
