@@ -38,6 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.pushNamed(context, AppRoutes.timeTable);
                 }),
                 features(context, "Check Exam Details", Icons.quiz, () {}),
+                features(context, "Courses & Faculty", Icons.person, () {}),
+                features(context, "GPA/CGPA Calculate", Icons.calculate, () {}),
+                features(context, "Academic Calendar", Icons.calendar_month, () {}),
+                features(context, "Notices / Announcements", Icons.announcement, () {}),
               ],
             )
           )
