@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class MyTextField extends StatefulWidget {
+class CustomTextField extends StatefulWidget {
   final String? hintText;
   final TextEditingController? controller;
   final void Function()? onTap;
@@ -66,7 +66,7 @@ class MyTextField extends StatefulWidget {
   final Color? suffixIconColor;
   final TextStyle? labelTextStyle;
 
-  const MyTextField({
+  const CustomTextField({
     super.key,
     this.btnLabel,
     this.suffixIconColor,
@@ -134,10 +134,10 @@ class MyTextField extends StatefulWidget {
   });
 
   @override
-  State<MyTextField> createState() => _MyTextFieldState();
+  State<CustomTextField> createState() => _CustomTextFieldState();
 }
 
-class _MyTextFieldState extends State<MyTextField> {
+class _CustomTextFieldState extends State<CustomTextField> {
   late bool isTextObscured;
 
   @override

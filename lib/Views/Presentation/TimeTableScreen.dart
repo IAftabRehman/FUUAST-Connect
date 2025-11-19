@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fuuast_connect/Views/Elements/CustomContainer.dart';
-
 import '../../Configuration/AppColors.dart';
 import '../Elements/CustomText.dart';
+import '../Widgets/CustomDropDownWidget.dart';
 
 class TimeTableScreen extends StatefulWidget {
   const TimeTableScreen({super.key});
@@ -58,38 +58,38 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
               size: 20,
             ),
             const SizedBox(height: 10),
-            buildCustomDropdown(
+            CustomDropdown(
               label: "Select Department",
               selectedValue: _selectDepartment,
               items: _department,
               onChanged: (val) =>
-                  setState(() => _selectDepartment = _selectDepartment),
+                  setState(() => _selectDepartment = val),
             ),
             const SizedBox(height: 10),
 
-            buildCustomDropdown(
+            CustomDropdown(
               label: "Select Shift",
               selectedValue: _selectShift,
               items: _shift,
-              onChanged: (val) => setState(() => _selectShift = _selectShift),
+              onChanged: (val) => setState(() => _selectShift = val),
             ),
 
             const SizedBox(height: 10),
 
-            buildCustomDropdown(
+            CustomDropdown(
               label: "Select Semester",
               selectedValue: _selectSemester,
               items: _semester,
-              onChanged: (val) => setState(() => _selectSemester = _selectSemester),
+              onChanged: (val) => setState(() => _selectSemester = val),
             ),
 
             const SizedBox(height: 10),
 
-            buildCustomDropdown(
+            CustomDropdown(
               label: "Select Section",
               selectedValue: _selectSection,
               items: _section,
-              onChanged: (val) => setState(() => _selectSection = _selectSection),
+              onChanged: (val) => setState(() => _selectSection = val),
             ),
 
             MyContainer(),
@@ -98,48 +98,5 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
       ),
     );
   }
-
-  Widget buildCustomDropdown<T>({
-    required String label,
-    required T? selectedValue,
-    required List<T> items,
-    required ValueChanged<T?> onChanged,
-    IconData icon = Icons.arrow_drop_down,
-  }) {
-    return MyContainer(
-      width: MediaQuery.of(context).size.width * 0.8,
-      child: DropdownButtonFormField<T>(
-        value: selectedValue,
-        decoration: InputDecoration(
-          hintText: label,
-          filled: true,
-          fillColor: Colors.white,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: AppColors.primaryColor, width: 1.5),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: Colors.grey.shade400),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: AppColors.primaryColor, width: 2),
-          ),
-        ),
-        items: items.map((T item) {
-          return DropdownMenuItem<T>(
-            value: item,
-            child: Text(
-              item.toString(),
-              style: TextStyle(fontSize: 15, color: Colors.black87),
-            ),
-          );
-        }).toList(),
-        onChanged: onChanged,
-        dropdownColor: Colors.white,
-        icon: Icon(icon, color: AppColors.primaryColor, size: 30),
-      ),
-    );
-  }
 }
+
