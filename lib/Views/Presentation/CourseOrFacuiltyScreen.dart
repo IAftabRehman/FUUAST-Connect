@@ -53,7 +53,9 @@ class _CourseOrFacultyScreenState extends State<CourseOrFacultyScreen> {
   }
 
   void _onTextChanged(String value) {
-    List<String> listToSearch = _selectInput == "Course" ? _courses : _teachers;
+    List<String> listToSearch =
+    _selectInput == "Input Course Name" ? _courses : _teachers;
+
     setState(() {
       if (value.isEmpty) {
         _searchResults = [];

@@ -27,35 +27,60 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColors.primaryColor,
       ),
       body: Padding(
-            padding: const EdgeInsets.all(10),
-            child: GridView.count(
-              crossAxisCount: 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-              padding: EdgeInsets.all(10),
-              children: [
-                features(context, "Time Table", Icons.today_outlined, () {
-                  Navigator.pushNamed(context, AppRoutes.timeTable);
-                }),
-                features(context, "Check Exam Details", Icons.quiz, () {}),
-                features(context, "Courses & Faculty", Icons.person, () {
-                  Navigator.pushNamed(context, AppRoutes.courseOrFaculty);
-                }),
-                features(context, "GPA/CGPA Calculate", Icons.calculate, () {}),
-                features(context, "Academic Calendar", Icons.calendar_month, () {}),
-                features(context, "Notices / Announcements", Icons.announcement, () {}),
-              ],
-            )
-          )
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                padding: EdgeInsets.all(10),
+                children: [
+                  features(context, "Time Table", Icons.today_outlined, () {
+                    Navigator.pushNamed(context, AppRoutes.timeTable);
+                  }),
+                  features(context, "Check Exam Details", Icons.quiz, () {
+                    Navigator.pushNamed(context, AppRoutes.checkExam);
+                  }),
+                  features(context, "Courses & Faculty", Icons.person, () {
+                    Navigator.pushNamed(context, AppRoutes.courseOrFaculty);
+                  }),
+                  features(
+                      context, "GPA/CGPA Calculate", Icons.calculate, () {}),
+                  features(context, "Academic Calendar",
+                      Icons.calendar_month, () {}),
+                  features(context, "Notices / Announcements",
+                      Icons.announcement, () {}),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+
+      bottomNavigationBar: MyContainer(
+        height: 60,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MyText(text: "Powered by ", size: 18,),
+            MyText(text: "Aftab Fuustain's",
+              size: 18,
+              decoration: TextDecoration.underline,
+              color: Colors.blue,
+              onTap: () => Navigator.pushNamed(context, AppRoutes.profile),)
+          ],
+        ),
+      ),
+
     );
   }
 
-  MyContainer features(
-    BuildContext context,
-    String name,
-    IconData icon,
-    GestureTapCallback onTap,
-  ) {
+  MyContainer features(BuildContext context,
+      String name,
+      IconData icon,
+      GestureTapCallback onTap,) {
     return MyContainer(
       onTap: onTap,
       color: Colors.black12,
@@ -71,12 +96,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const SizedBox(height: 10),
           MyText(
-            text: name,
-            size: 15,
-            fontWeight: FontWeight.bold,
-            color: AppColors.primaryColor,
-            textAlign: TextAlign.center,
-            textOverflow: TextOverflow.visible
+              text: name,
+              size: 15,
+              fontWeight: FontWeight.bold,
+              color: AppColors.primaryColor,
+              textAlign: TextAlign.center,
+              textOverflow: TextOverflow.visible
           ),
         ],
       ),
