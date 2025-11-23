@@ -15,7 +15,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      /// Background Color
       backgroundColor: AppColors.backgroundColor,
+
+      /// AppBar
       appBar: AppBar(
         title: MyText(
           text: "Fuuastian's",
@@ -26,6 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: AppColors.primaryColor,
       ),
+
+      /// Body
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -37,19 +43,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 20,
                 padding: EdgeInsets.all(10),
                 children: [
+
+                  /// TimeTable Widget
                   features(context, "Time Table", Icons.today_outlined, () {
                     Navigator.pushNamed(context, AppRoutes.timeTable);
                   }),
+
+                  /// Check Exam Widget
                   features(context, "Check Exam Details", Icons.quiz, () {
                     Navigator.pushNamed(context, AppRoutes.checkExam);
                   }),
+
+                  /// Courses Widget
                   features(context, "Courses & Faculty", Icons.person, () {
                     Navigator.pushNamed(context, AppRoutes.courseOrFaculty);
                   }),
+
+                  /// GPA/CGPA Widget
                   features(
                       context, "GPA/CGPA Calculate", Icons.calculate, () {}),
+
+                  /// Academic Calender Widget
                   features(context, "Academic Calendar",
                       Icons.calendar_month, () {}),
+
+                  /// Notice and Announcements Widget
                   features(context, "Notices / Announcements",
                       Icons.announcement, () {}),
                 ],
@@ -59,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
+      ///  Bottom Navigation Bar
       bottomNavigationBar: MyContainer(
         height: 60,
         child: Row(
@@ -77,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  /// Custom Widget
   MyContainer features(BuildContext context,
       String name,
       IconData icon,
