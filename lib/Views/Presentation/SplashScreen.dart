@@ -13,6 +13,8 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  /// Splash Screen Logic
   @override
   void initState() {
     super.initState();
@@ -23,13 +25,22 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    /// Provider File
     final provider = context.watch<SplashProvider>();
+
     return Scaffold(
+
+      /// Background Color
       backgroundColor: Colors.white,
+
+      /// Body
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
+          /// Image Widget (FUUAST Logo)
           Center(
             child: AnimatedContainer(
               duration: const Duration(seconds: 1),
@@ -40,6 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           const SizedBox(height: 30),
 
+          /// Bottom Text
           AnimatedOpacity(
             opacity: provider.showText ? 1.0 : 0.0,
             duration: const Duration(seconds: 2),
