@@ -14,6 +14,7 @@ class CourseOrFacultyScreen extends StatefulWidget {
 }
 
 class _CourseOrFacultyScreenState extends State<CourseOrFacultyScreen> {
+  /// Input Select Role where are you searching
   final List<String> _inputString = ["Input Course Name", "Input Teacher Name"];
   String? _selectInput;
 
@@ -71,6 +72,8 @@ class _CourseOrFacultyScreenState extends State<CourseOrFacultyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      /// AppBar
       appBar: AppBar(
         title: MyText(
           text: "Find Course or Faculty",
@@ -85,6 +88,8 @@ class _CourseOrFacultyScreenState extends State<CourseOrFacultyScreen> {
           icon: Icon(Icons.arrow_back, color: AppColors.backgroundColor),
         ),
       ),
+
+      /// Body
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
