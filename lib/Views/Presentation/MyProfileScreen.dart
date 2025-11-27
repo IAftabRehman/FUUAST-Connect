@@ -14,6 +14,8 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      /// Appbar
       appBar: AppBar(
         title: MyText(
           text: "Who is Aftab",
