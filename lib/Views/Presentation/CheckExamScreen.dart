@@ -34,6 +34,8 @@ class _CheckExamScreenState extends State<CheckExamScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      /// Appbar
       appBar: AppBar(
         title: MyText(
           text: "Check Exam Details",
@@ -48,16 +50,22 @@ class _CheckExamScreenState extends State<CheckExamScreen> {
           icon: Icon(Icons.arrow_back, color: AppColors.backgroundColor),
         ),
       ),
+
+      /// Body
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
+
+            /// Title
             MyText(
               text: "Date Sheet",
               fontWeight: FontWeight.bold,
               size: 20,
             ),
             const SizedBox(height: 10),
+
+            /// Select Department
             CustomDropdown(
               label: "Select Department",
               selectedValue: _selectDepartment,
@@ -67,31 +75,31 @@ class _CheckExamScreenState extends State<CheckExamScreen> {
             ),
             const SizedBox(height: 10),
 
+            /// Select Shift
             CustomDropdown(
               label: "Select Shift",
               selectedValue: _selectShift,
               items: _shift,
               onChanged: (val) => setState(() => _selectShift = val),
             ),
-
             const SizedBox(height: 10),
 
+            /// Select Semester
             CustomDropdown(
               label: "Select Semester",
               selectedValue: _selectSemester,
               items: _semester,
               onChanged: (val) => setState(() => _selectSemester = val),
             ),
-
             const SizedBox(height: 10),
 
+            /// Select Section
             CustomDropdown(
               label: "Select Section",
               selectedValue: _selectSection,
               items: _section,
               onChanged: (val) => setState(() => _selectSection = val),
             ),
-
           ],
         ),
       ),

@@ -94,6 +94,8 @@ class _CourseOrFacultyScreenState extends State<CourseOrFacultyScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
+
+            /// Welcome Title
             Center(
               child: MyText(
                 text: "Welcome to UniTime",
@@ -103,6 +105,7 @@ class _CourseOrFacultyScreenState extends State<CourseOrFacultyScreen> {
             ),
             const SizedBox(height: 10),
 
+            /// Select Input View
             CustomDropdown(
               label: "Select Input String",
               selectedValue: _selectInput,
@@ -116,6 +119,7 @@ class _CourseOrFacultyScreenState extends State<CourseOrFacultyScreen> {
 
             const SizedBox(height: 10),
 
+            /// Select Teacher or Course
             if (_selectInput != "Select Input String")
               CustomTextField(
                 controller: _controller,
