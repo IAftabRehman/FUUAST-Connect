@@ -56,7 +56,6 @@ class _CheckExamScreenState extends State<CheckExamScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-
             /// Title
             MyText(
               text: "Date Sheet",
